@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ali Shoja — Portfolio
+
+A personal portfolio website showcasing selected front-end work, with dedicated project pages and case study-style presentations.
+
+## Live Demo
+
+``
+
+## Preview
+
+![Portfolio preview](./public/preview.png)
+
+## About
+
+This repository contains my personal portfolio site. It’s built to present real projects with clear context—what the product is, what it does, how it works, and the technologies behind it—without turning the site into a blog or a template showcase.
+
+## What’s Inside
+
+- Home page with featured work and a clear entry point to the full projects list
+- Projects index page with concise, scannable project cards
+- Individual project pages (`/projects/:slug`) with:
+  - Overview
+  - Features
+  - Tech stack
+  - Screenshots / gallery
+- About and Contact pages
+
+## Key Highlights
+
+- **Dedicated project pages**: project details live on their own routes (no modal-based case studies)
+- **Product-focused presentation**: each project is framed like a real build, not a collection of UI screenshots
+- **Clean UI / UX**: warm neutral palette, editorial typography, and restrained motion
+- **Real-world projects**: includes full-stack and front-end work with practical constraints (upload flows, dashboards, performance, etc.)
+
+## Tech Stack
+
+- **Next.js** (App Router)
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion** (subtle motion + transitions)
+
+## Architecture
+
+- **App Router** routing under `app/`
+- **Dynamic project pages** using `app/projects/[slug]` (e.g. `/projects/receipttrack`)
+- **Component-based structure** with page sections and reusable UI primitives
+- Project content is driven from a central constants file (`lib/constants.ts`) to keep pages consistent and easy to extend
+
+## Project Structure
+
+```
+app/
+  about/
+  contact/
+  projects/
+    [slug]/
+      page.tsx
+    page.tsx
+  layout.tsx
+  page.tsx
+components/
+  about/
+  contact/
+  home/
+  layout/
+  projects/
+  ui/
+lib/
+  constants.ts
+  utils.ts
+public/
+  images/
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+git clone <your-repo-url>
+cd portfolio
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is designed to deploy cleanly on **Vercel**.
 
-## Learn More
+- Build: `npm run build`
+- Start: `npm run start`
 
-To learn more about Next.js, take a look at the following resources:
+## Future Improvements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Add a lightweight CMS workflow for projects (MDX or a headless CMS)
+- Add a small writing section (notes / blog) without bloating the UI
+- Improve image pipeline (blur placeholders, responsive art direction per project)
+- Add basic analytics and performance monitoring
+- Expand accessibility audit coverage (keyboard states, reduced motion, contrast checks)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Author
 
-## Deploy on Vercel
+**Ali Shoja**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- GitHub: `https://github.com/alishoja88`
+- LinkedIn: `https://www.linkedin.com/in/alias-shoja/`
