@@ -9,7 +9,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 const HIGHLIGHTS = [
   { label: "React & TypeScript" },
-  { label: "5+ Years Experience" },
+  { label: "3+ Years Experience" },
   { label: "Moncton, Canada" },
 ];
 
