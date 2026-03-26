@@ -1,8 +1,8 @@
 "use client";
 
-import { Mail, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { Mail } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { SITE_CONFIG } from "@/lib/constants";
 
 export function AboutCTA() {
   return (
@@ -24,20 +24,13 @@ export function AboutCTA() {
             </p>
 
             <div className="flex flex-col xs:flex-row flex-wrap items-center justify-center gap-3">
-              <a
-                href={`mailto:${SITE_CONFIG.email}`}
+              <Link
+                href="/contact"
                 className="inline-flex items-center gap-2 bg-olive text-surface px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-olive-hover shadow-soft hover:shadow-medium btn-lift"
               >
                 <Mail size={14} strokeWidth={2} />
                 Let&apos;s talk
-              </a>
-              <a
-                href="/#contact"
-                className="inline-flex items-center gap-2 border border-border bg-surface px-7 py-3.5 rounded-full text-sm font-semibold text-text/80 hover:border-olive/35 hover:text-text btn-lift"
-              >
-                Contact Page
-                <ArrowUpRight size={14} strokeWidth={2} />
-              </a>
+              </Link>
             </div>
           </div>
         </FadeIn>

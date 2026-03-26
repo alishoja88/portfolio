@@ -49,7 +49,7 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
+            href="/contact"
             className="hidden md:inline-flex items-center gap-2 bg-olive text-surface text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-olive-hover btn-lift"
           >
             Contact
@@ -86,7 +86,7 @@ export function Header() {
                 </a>
               ))}
               <a
-                href="#contact"
+                href="/contact"
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center justify-center gap-2 bg-olive text-surface text-sm font-semibold px-5 py-2.5 rounded-full mt-3 w-full"
               >
