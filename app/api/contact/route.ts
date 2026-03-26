@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { promises as dns } from "dns";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 /* ── Format check ── */
 function isValidEmailFormat(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
@@ -22,12 +20,16 @@ async function domainHasMX(email: string): Promise<boolean> {
 
 export async function POST(req: NextRequest) {
   /* Check API key is configured */
-  if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === "re_your_api_key_here") {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey || apiKey === "re_your_api_key_here") {
     return NextResponse.json(
       { error: "Email service is not configured yet." },
       { status: 503 }
     );
   }
+
+  // Create client lazily to avoid build-time crashes when env vars are missing
+  const resend = new Resend(apiKey);
 
   let body: { name?: string; email?: string; message?: string };
   try {
