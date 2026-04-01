@@ -198,6 +198,197 @@ export const PROJECTS = [
       ],
     },
   },
+  {
+    number: "03",
+    slug: "atelier",
+    category: "E-COMMERCE PROJECT",
+    title: "Atelier Fashion Store",
+    subtitle:
+      "A modern, premium fashion e-commerce experience built for performance, design quality, real-world API integration, and production-level testing.",
+    highlight:
+      "Premium e-commerce experience with cinematic motion, real API data, and comprehensive automated tests.",
+    description:
+      "A premium fashion e-commerce platform built with Next.js 16, featuring cinematic animations, real API integration, and 91 passing tests across unit, integration, and E2E suites.",
+    role: "Front-End Developer",
+    features: [
+      "Cinematic landing page with fullscreen hero and scroll-triggered animations",
+      "Product listing with filtering, search, and category navigation across 194 real products",
+      "Product detail page with animated gallery, size/color selection, ratings, and reviews",
+      "Cart management with fly-to-cart animation and Zustand global state",
+      "Quick View modal for instant product preview",
+      "91 passing tests across unit, integration, and E2E",
+      "Fully responsive across all screen sizes",
+    ],
+    impact: [
+      "194 real products from DummyJSON API",
+      "6 pages: Landing, Shop, Detail, Cart, Wishlist, Checkout",
+      "91 passing tests",
+      "2 tested browsers: Chrome + Mobile Safari",
+      "0 failed tests",
+    ],
+    tags: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "Framer Motion v12",
+      "TanStack Query v5",
+      "Zustand v5",
+      "Axios",
+      "DummyJSON API",
+      "Vitest",
+      "Playwright",
+    ],
+    liveUrl: "https://atelier-ecommerce-psi.vercel.app",
+    githubUrl: "https://github.com/alishoja88/atelier-ecommerce",
+    previewType: "platform" as const,
+    image: "/images/projects/ecommerce/Screenshot1.png",
+    images: [
+      "/images/projects/ecommerce/Screenshot1.png",
+      "/images/projects/ecommerce/Screenshot2.png",
+      "/images/projects/ecommerce/Screenshot3.png",
+      "/images/projects/ecommerce/Screenshot4.png",
+    ],
+    caseStudy: {
+      heroDescription:
+        "Atelier is a full-featured fashion e-commerce platform designed as a senior front-end portfolio piece. It demonstrates production-level code architecture, modern UI patterns, seamless API integration, and comprehensive test coverage — built entirely with Next.js 16 and the latest React ecosystem.",
+      valueBullets: [
+        "Cinematic landing page with fullscreen hero and scroll-triggered animations",
+        "Product listing with real-time filtering, search, and category navigation across 194 real products",
+        "Product detail page with animated image gallery, size/color selection, real ratings, and customer reviews",
+        "Cart management with fly-to-cart animation and Zustand global state",
+        "Quick View modal for instant product preview",
+        "91 passing tests: unit, integration, and E2E",
+        "Fully responsive across all screen sizes",
+      ],
+      overview: {
+        what: "Atelier simulates a real-world premium fashion store. Users can browse 194 real products from the DummyJSON API, filter by category, search by keyword, view detailed product pages with image galleries, add items to cart, and manage their wishlist — all with smooth animations and a polished editorial design aesthetic.",
+        howSteps: [
+          "DummyJSON API provides 194 real products with images, ratings, reviews, and categories",
+          "TanStack Query handles all data fetching, caching, and pagination automatically",
+          "Zustand manages cart and wishlist state globally across all pages",
+          "Framer Motion powers all animations including scroll-triggered and fly-to-cart effects",
+          "Next.js App Router handles routing, layouts, and server/client component boundaries",
+        ],
+      },
+      features: [
+        {
+          title: "Cinematic Hero",
+          description:
+            "Fullscreen editorial hero with floating transparent navbar, product thumbnail strip, and Framer Motion entrance animations.",
+        },
+        {
+          title: "Product Listing",
+          description:
+            "194 real products with category filtering, keyword search, sort by price/rating, and numbered pagination with total count.",
+        },
+        {
+          title: "Product Detail",
+          description:
+            "Full-page product view with animated image gallery, size selector, color picker, real star ratings, and reviews.",
+        },
+        {
+          title: "Cart Management",
+          description:
+            "Real-time cart with quantity controls, fly-to-cart animation via React portal, and live order summary.",
+        },
+        {
+          title: "Quick View Modal",
+          description:
+            "Preview any product without leaving the current page via an animated modal overlay with full product info.",
+        },
+        {
+          title: "Wishlist",
+          description:
+            "Save favorite products with heart toggle animation and persistent Zustand state across all pages.",
+        },
+      ],
+      testing: {
+        subtitle:
+          "91 tests across three layers ensure every feature works correctly — from isolated business logic to full user flows in real browsers.",
+        layers: [
+          {
+            title: "Unit Tests",
+            count: "31 tests (Vitest)",
+            details: [
+              "adaptProduct(): badge assignment, price calculation, category formatting, originalPrice logic",
+              "cartStore: add, remove, quantity increment, totalCount calculation",
+              "wishlistStore: toggle, isWishlisted, empty state",
+              "cn() utility: class merging, Tailwind conflict resolution",
+            ],
+          },
+          {
+            title: "Integration Tests",
+            count: "22 tests (Vitest + Testing Library)",
+            details: [
+              "ProductCard: renders name/price/badge, add-to-cart updates Zustand store, wishlist toggle",
+              "Cart flow: add -> remove -> quantity -> totalCount lifecycle",
+              "Pagination: page numbers, active highlight, prev/next disabled states, ellipsis rendering",
+            ],
+          },
+          {
+            title: "E2E Tests",
+            count: "38 tests (Playwright)",
+            details: [
+              "Navigation: homepage, shop, product detail, cart, wishlist flows",
+              "Shop: product display, category filter, pagination, sort dropdown",
+              "Cart: add/remove items, badge increment, quantity selector",
+              "Product Detail: info display, image gallery, size selector, add to cart, wishlist toggle",
+            ],
+          },
+        ],
+        results: [
+          { label: "Unit/Integration", value: "53 passed / 0 failed" },
+          { label: "E2E Chrome", value: "19 passed / 0 failed" },
+          { label: "E2E Mobile Safari", value: "19 passed / 0 failed" },
+          { label: "Total", value: "91 passed / 0 failed" },
+        ],
+      },
+      techStack: {
+        Frontend: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Framer Motion v12"],
+        "State Management": ["Zustand v5", "TanStack Query v5"],
+        "API & Data": ["Axios", "DummyJSON API (194 products)"],
+        Testing: ["Vitest", "Testing Library", "Playwright"],
+        Tooling: ["ESLint", "Prettier", "Cursor AI"],
+      },
+      techDescriptions: {
+        Frontend:
+          "Modern React architecture with premium UI polish and performance-focused rendering.",
+        "State Management":
+          "Separation of server-state and app-state for predictable, scalable behavior.",
+        "API & Data":
+          "Real product data with adapter-driven transformation and type-safe usage in the UI.",
+        Testing:
+          "Three-layer strategy covering logic, component behavior, and browser-level user flows.",
+        Tooling: "Linting, formatting, and AI-assisted development workflow for consistent delivery.",
+      } as Record<string, string>,
+      challenges: [
+        {
+          title: "Adapter Pattern for API Stability",
+          description:
+            "DummyJSON returns data in a format that does not directly match app needs. A custom adapter layer transforms all API responses into app-specific types, centralizing badge assignment, price calculation, and category formatting.",
+        },
+        {
+          title: "Server & Client Boundary in Next.js",
+          description:
+            "With App Router, server and client responsibilities must be deliberate. Pages stay server components for performance while TanStack Query and Framer Motion run only where needed.",
+        },
+        {
+          title: "Testing Complex Animations",
+          description:
+            "Fly-to-cart uses React portals and real DOM position reads via getBoundingClientRect(). Tests required portal mocking and Playwright synchronization to assert badge updates after animation completes.",
+        },
+      ],
+      highlights: [
+        "194 real products from DummyJSON API with automatic caching and background refetching",
+        "Editorial design inspired by Nike, SSENSE, and Net-a-Porter — not a generic template",
+        "Fly-to-cart animation using React portals, Framer Motion, and real DOM position tracking",
+        "91 tests covering unit logic, component behavior, and full E2E flows across 2 browsers",
+        "Clean architecture: feature-based folders, adapter pattern, strict TypeScript, no any types",
+        "Fully responsive from 375px mobile to 1440px desktop with Tailwind CSS v4",
+      ],
+    },
+  },
 ] as const;
 
 export const SKILLS = [

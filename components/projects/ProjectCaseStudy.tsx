@@ -19,9 +19,19 @@ function GithubIcon({ size = 16 }: { size?: number }) {
 
 /* ── Type helpers ── */
 type CaseStudyData = {
+  heroDescription?: string;
   valueBullets: readonly string[];
   overview: { what: string; howSteps: readonly string[] };
   features: readonly { readonly title: string; readonly description: string }[];
+  testing?: {
+    subtitle: string;
+    layers: readonly {
+      readonly title: string;
+      readonly count: string;
+      readonly details: readonly string[];
+    }[];
+    results: readonly { readonly label: string; readonly value: string }[];
+  };
   techStack: Record<string, readonly string[]>;
   techDescriptions: Record<string, string>;
   challenges: readonly { readonly title: string; readonly description: string }[];
@@ -33,13 +43,15 @@ function hasCaseStudy(p: Project): p is Project & { caseStudy: CaseStudyData } {
 }
 
 /* ── Image captions per index ── */
-const IMG_CAPTIONS = [
-  "Dashboard overview",
-  "Receipt upload flow",
-  "Expense analytics",
-  "Smart categorization",
-  "Search and filtering",
-];
+const IMG_CAPTIONS: Record<string, readonly string[]> = {
+  receipttrack: [
+    "Dashboard overview",
+    "Receipt upload flow",
+    "Expense analytics",
+    "Smart categorization",
+    "Search and filtering",
+  ],
+};
 
 /* ── Section card wrapper ── */
 const card = "bg-[#edeae2] rounded-2xl border border-[#dbd7ce]";
@@ -54,6 +66,7 @@ export function ProjectCaseStudy({ project }: Props) {
   const cs = hasCaseStudy(project) ? project.caseStudy : null;
   const images = "images" in project ? (project.images as readonly string[]) : [];
   const [activeImg, setActiveImg] = useState(0);
+  const captions = IMG_CAPTIONS[project.slug] ?? [];
 
   return (
     <main className="min-h-screen">
@@ -93,13 +106,13 @@ export function ProjectCaseStudy({ project }: Props) {
 
               <FadeIn delay={0.06}>
                 <p className="text-lg text-text/55 leading-snug mb-5">
-                  Automatically extract, organize, and analyze receipts using OCR and AI.
+                  {project.subtitle}
                 </p>
               </FadeIn>
 
               <FadeIn delay={0.08}>
                 <p className="text-[0.875rem] text-text/60 leading-[1.8] mb-6 max-w-md">
-                  ReceiptTrack is a full-stack expense tracking application that turns receipt images and PDFs into structured expense records. It combines OCR, AI-based parsing, and a responsive analytics dashboard to reduce manual entry and make expense tracking faster.
+                  {cs?.heroDescription ?? project.description}
                 </p>
               </FadeIn>
 
@@ -149,7 +162,7 @@ export function ProjectCaseStudy({ project }: Props) {
                   <div className="relative w-full rounded-2xl overflow-hidden bg-[#0e1820] shadow-medium" style={{ aspectRatio: "16/10" }}>
                     <Image
                       src={images[activeImg]}
-                      alt={`${project.title} — ${IMG_CAPTIONS[activeImg] ?? ""}`}
+                      alt={`${project.title} — ${captions[activeImg] ?? `Screenshot ${activeImg + 1}`}`}
                       fill
                       className="object-cover object-top transition-opacity duration-500"
                       sizes="(max-width: 1024px) 100vw, 54vw"
@@ -158,7 +171,7 @@ export function ProjectCaseStudy({ project }: Props) {
                   </div>
                   {/* Caption */}
                   <p className="text-[0.7rem] text-text/35 font-medium text-center tracking-wide">
-                    {IMG_CAPTIONS[activeImg] ?? `Screenshot ${activeImg + 1}`}
+                    {captions[activeImg] ?? `Screenshot ${activeImg + 1}`}
                   </p>
                   {/* Thumbnails */}
                   <div className="flex gap-2">
@@ -240,6 +253,51 @@ export function ProjectCaseStudy({ project }: Props) {
                 </FadeIn>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* ══════════ TESTING ══════════ */}
+      {cs?.testing && (
+        <section className="py-12 lg:py-16" style={{ background: sectionBgA }}>
+          <div className="container-base">
+            <FadeIn>
+              <p className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-olive mb-2">Testing</p>
+              <h2 className="font-display text-3xl font-medium tracking-tight text-text mb-3">Tested &amp; Verified</h2>
+              <p className="text-[0.86rem] text-text/58 leading-relaxed max-w-2xl mb-8">{cs.testing.subtitle}</p>
+            </FadeIn>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-3.5 mb-6">
+              {cs.testing.layers.map((layer, i) => (
+                <FadeIn key={layer.title} delay={0.04 * i}>
+                  <div className={`${card} p-5 h-full`} style={{ background: sectionBgB }}>
+                    <p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-text/40 mb-2">{layer.title}</p>
+                    <p className="text-[0.82rem] font-semibold text-olive mb-3">{layer.count}</p>
+                    <ul className="space-y-2">
+                      {layer.details.map((item) => (
+                        <li key={item} className="text-[0.78rem] text-text/58 leading-relaxed">
+                          • {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+
+            <FadeIn delay={0.08}>
+              <div className={`${card} p-5`} style={{ background: sectionBgB }}>
+                <p className="text-[0.62rem] font-bold uppercase tracking-[0.18em] text-text/40 mb-3">Results</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {cs.testing.results.map((result) => (
+                    <div key={result.label} className="flex items-center justify-between gap-3 rounded-lg border border-border/70 bg-surface/70 px-3 py-2.5">
+                      <span className="text-[0.78rem] text-text/58">{result.label}</span>
+                      <span className="text-[0.78rem] font-semibold text-olive">{result.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </section>
       )}
