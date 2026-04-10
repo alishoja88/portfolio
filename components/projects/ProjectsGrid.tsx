@@ -130,6 +130,10 @@ function CardPreview({ type }: { type: Project["previewType"] }) {
 
 function ProjectCard({ project, isFeatured = false }: { project: Project; isFeatured?: boolean }) {
   const isPage = hasDetailPage(project);
+  const visibleTags =
+    project.slug === "receipttrack" || project.slug === "devprep-ai"
+      ? project.tags.slice(0, 8)
+      : project.tags.slice(0, 5);
 
   return (
     <FadeIn>
@@ -182,7 +186,7 @@ function ProjectCard({ project, isFeatured = false }: { project: Project; isFeat
 
           {/* Tags */}
           <div className="flex flex-wrap gap-1.5 mb-5">
-            {project.tags.slice(0, 5).map((tag) => (
+            {visibleTags.map((tag) => (
               <span
                 key={tag}
                 className="px-2.5 py-0.5 rounded-full bg-olive/8 border border-olive/18 text-[0.65rem] font-bold text-olive tracking-wide"

@@ -56,8 +56,17 @@ export const PROJECTS = [
       "OCR + AI extraction pipeline",
       "Full-stack: React + NestJS",
     ],
-    tags: ["React", "TypeScript", "NestJS", "PostgreSQL", "OCR", "OpenAI"],
-    liveUrl: "https://receipts-tracker.up.railway.app/",
+    tags: [
+      "React",
+      "TypeScript",
+      "NestJS",
+      "PostgreSQL",
+      "OCR",
+      "OpenAI",
+      "Google Cloud Run",
+      "Cloud SQL",
+    ],
+    liveUrl: "https://receipt-tracker-frontend-827118437630.us-central1.run.app/",
     githubUrl: "https://github.com/alishoja88",
     previewType: "interface" as const,
     image: "/images/projects/receipttracker/receipt-tracker-1.png",
@@ -82,6 +91,7 @@ export const PROJECTS = [
           "OpenAI parses the raw text into structured fields",
           "NestJS validates and stores the data in PostgreSQL",
           "The dashboard updates with searchable records and analytics",
+          "The app is containerized with Docker and deployed on Google Cloud Run with Cloud SQL",
         ],
       },
       features: [
@@ -91,29 +101,35 @@ export const PROJECTS = [
         { title: "Analytics Dashboard", description: "Visualize spending patterns with summaries, charts, and transaction overviews." },
         { title: "Smart Categorization", description: "Automatically group expenses by category with support for manual review." },
         { title: "Search & Filters", description: "Find receipts using text search, date range, amount, and category filters." },
+        { title: "Cloud Deployment", description: "Dockerized and deployed on Google Cloud Run with managed Cloud SQL for production-grade scalability." },
       ],
       techStack: {
         Frontend: ["React", "TypeScript", "Vite", "Tailwind CSS", "React Query", "Zustand"],
         Backend: ["NestJS", "TypeORM", "PostgreSQL"],
         Integrations: ["OpenAI API", "Google Cloud Vision API"],
-        Tooling: ["Docker", "ESLint", "Prettier"],
+        Tooling: ["Docker", "ESLint", "Prettier", "Google Cloud Run", "Cloud SQL", "Artifact Registry"],
+        Infrastructure: ["Google Cloud Run", "Cloud SQL (PostgreSQL)", "Artifact Registry"],
       },
       techDescriptions: {
         Frontend: "Type-safe UI, responsive layout, state management, and efficient server-state handling.",
         Backend: "Structured API layer, validation, persistence, and scalable data handling.",
         Integrations: "OCR text extraction and AI-based parsing for structured expense data.",
-        Tooling: "Consistent development workflow and maintainable code quality.",
+        Tooling: "Consistent development workflow and maintainable code quality with deployment-ready tooling.",
+        Infrastructure:
+          "Containerized deployment on Google Cloud with managed PostgreSQL and private image registry.",
       } as Record<string, string>,
       challenges: [
         { title: "OCR Reliability", description: "Receipt text can be inconsistent, noisy, or incomplete depending on image quality and vendor formatting." },
         { title: "Structured Parsing", description: "OpenAI is used to transform unstructured OCR text into consistent structured fields before saving." },
         { title: "Full-Stack Architecture", description: "The app separates upload, parsing, validation, and persistence responsibilities across the frontend and backend to keep the system maintainable." },
+        { title: "Cloud Deployment", description: "Deployed on Google Cloud Run with Cloud SQL, Docker multi-stage builds for both frontend and backend, and secure environment configuration." },
       ],
       highlights: [
         "Eliminates manual expense entry through OCR and AI parsing",
         "Combines OCR extraction with AI-based structured data processing",
         "Supports responsive analytics and searchable transaction history",
         "Built with a full-stack TypeScript architecture for maintainability",
+        "Deployed on Google Cloud Run with Cloud SQL for production-ready infrastructure",
       ],
     },
   },
@@ -386,6 +402,145 @@ export const PROJECTS = [
         "91 tests covering unit logic, component behavior, and full E2E flows across 2 browsers",
         "Clean architecture: feature-based folders, adapter pattern, strict TypeScript, no any types",
         "Fully responsive from 375px mobile to 1440px desktop with Tailwind CSS v4",
+      ],
+    },
+  },
+  {
+    number: "04",
+    slug: "devprep-ai",
+    category: "AI PRODUCT",
+    title: "DevPrep AI",
+    subtitle: "AI-powered frontend interview coach",
+    highlight:
+      "Practice technical interviews with personalized AI questions, instant scoring, and actionable feedback.",
+    description:
+      "Practice technical interviews with a personalized AI coach. Get real questions tailored to your role and level, submit answers, and receive detailed feedback with scores, strengths, and model answers — instantly.",
+    role: "Front-End Developer",
+    features: [
+      "Generate interview questions by role, level, and tech stack",
+      "Receive instant AI feedback with score, strengths, and improvements",
+      "Track your progress across sessions with a full history dashboard",
+    ],
+    impact: [
+      "GPT-4o powered question and feedback flows",
+      "Next.js App Router architecture",
+      "Session history with local persistence",
+    ],
+    tags: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "OpenAI",
+      "Zustand",
+      "Tailwind CSS",
+    ],
+    liveUrl: "https://developer-prepare-kttnhfelx-ali-shojas-projects.vercel.app/",
+    githubUrl: "https://github.com/alishoja88",
+    previewType: "platform" as const,
+    image: "/images/projects/AiPrep/ai-prep-1.png",
+    images: [
+      "/images/projects/AiPrep/ai-prep-1.png",
+      "/images/projects/AiPrep/ai-prep-2.png",
+      "/images/projects/AiPrep/ai-prep-3.png",
+      "/images/projects/AiPrep/ai-prep-4.png",
+      "/images/projects/AiPrep/ai-prep-5.png",
+    ],
+    caseStudy: {
+      heroDescription:
+        "DevPrep AI lets developers practice technical interviews at their own pace. Users configure a session by selecting their role (Frontend, Backend, Full Stack), experience level, and tech stack. The AI generates targeted questions, evaluates each answer with a score out of 10, and provides actionable feedback including strengths, areas to improve, and a model answer.",
+      valueBullets: [
+        "Generate interview questions by role, level, and tech stack",
+        "Receive instant AI feedback with score, strengths, and improvements",
+        "Track your progress across sessions with a full history dashboard",
+      ],
+      overview: {
+        what: "DevPrep AI lets developers practice technical interviews at their own pace. Users configure a session by selecting their role (Frontend, Backend, Full Stack), experience level, and tech stack. The AI generates targeted questions, evaluates each answer with a score out of 10, and provides actionable feedback including strengths, areas to improve, and a model answer.",
+        howSteps: [
+          "Configure your session — role, level, topic, and question count",
+          "AI generates tailored interview questions via OpenAI GPT-4o",
+          "Answer each question in your own words within the session",
+          "Submit and receive instant feedback: score, strengths, improvements",
+          "Review the session summary with per-topic performance breakdown",
+          "Browse your full history and track progress over time",
+        ],
+      },
+      features: [
+        {
+          title: "Role-based Question Generation",
+          description:
+            "Questions adapt to your role — Frontend, Backend, or Full Stack.",
+        },
+        {
+          title: "AI Feedback Engine",
+          description:
+            "GPT-4o evaluates each answer and returns a score, three strengths, areas to improve, and a model answer.",
+        },
+        {
+          title: "Session Configuration",
+          description:
+            "Choose your level (Junior / Mid / Senior), topic, and number of questions.",
+        },
+        {
+          title: "Session Summary",
+          description:
+            "Radar chart showing performance per topic, question breakdown, and score trends.",
+        },
+        {
+          title: "Hint System",
+          description:
+            "Request an AI-generated hint for any question without revealing the full solution.",
+        },
+        {
+          title: "Progress History",
+          description:
+            "All sessions are stored locally with filters and sorting by score or date.",
+        },
+      ],
+      techStack: {
+        Frontend: [
+          "Next.js 15",
+          "React 18",
+          "TypeScript",
+          "Tailwind CSS v4",
+          "Framer Motion",
+          "Zustand",
+          "Recharts",
+        ],
+        "AI / Backend": ["OpenAI GPT-4o", "Next.js API Routes"],
+        Data: ["localStorage"],
+        Tooling: ["Vercel"],
+      },
+      techDescriptions: {
+        Frontend:
+          "App Router architecture with client/server component separation, smooth animations, and global state management via Zustand.",
+        "AI / Backend":
+          "Server-side API routes call GPT-4o with structured JSON prompts to generate questions, evaluate answers, and produce hints — all with enforced response schemas.",
+        Data:
+          "Session history is persisted client-side with deduplication logic, supporting up to 20 past sessions with full Q&A and feedback data.",
+        Tooling: "Zero-config deployment and hosting on Vercel.",
+      } as Record<string, string>,
+      challenges: [
+        {
+          title: "Preventing Stale Questions",
+          description:
+            "The session store persists across navigations. When users returned from a session and started a new one, old questions from the previous topic were still being shown. Fixed by calling reset() when the user clicks Start, plus a useRef guard to prevent React Strict Mode from double-invoking duplicate API calls.",
+        },
+        {
+          title: "Role-Aware Topic Filtering",
+          description:
+            "Different roles require different tech stacks (for example, a Backend developer should not see CSS or React questions). Implemented a TOPICS_BY_ROLE map that filters available topics and selects a sensible default whenever the role changes.",
+        },
+        {
+          title: "Reliable AI Response Parsing",
+          description:
+            "GPT-4o is used with response_format: json_object, but the model can return arrays in varying shapes depending on the prompt. Built a multi-fallback parser for plain arrays, { questions: [...] }, { data: [...] }, and top-level arrays, with a final step that enforces the topic field for correctness.",
+        },
+      ],
+      highlights: [
+        "Generates role-specific and level-appropriate interview questions using GPT-4o",
+        "Evaluates free-text answers with structured feedback: score, strengths, and improvements",
+        "Tracks full session history with per-topic performance analytics and radar charts",
+        "Built with a type-safe Next.js App Router architecture and zero external database",
       ],
     },
   },

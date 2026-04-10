@@ -144,9 +144,11 @@ export function ProjectCaseStudy({ project }: Props) {
               {/* CTAs */}
               <FadeIn delay={0.14}>
                 <div className="flex flex-wrap gap-3">
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-olive text-surface text-sm font-semibold hover:-translate-y-0.5 hover:shadow-medium transition-all duration-200">
-                    Live Demo <ArrowUpRight size={14} strokeWidth={2.5} />
-                  </a>
+                  {project.liveUrl ? (
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-olive text-surface text-sm font-semibold hover:-translate-y-0.5 hover:shadow-medium transition-all duration-200">
+                      Live Demo <ArrowUpRight size={14} strokeWidth={2.5} />
+                    </a>
+                  ) : null}
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-text/20 text-text/70 text-sm font-semibold hover:border-olive hover:text-olive hover:-translate-y-0.5 transition-all duration-200">
                     <GithubIcon size={14} /> View Code
                   </a>
@@ -387,7 +389,9 @@ export function ProjectCaseStudy({ project }: Props) {
         <div className="container-base">
           <FadeIn>
             <p className="text-[0.8rem] text-text/40 text-center mb-5">
-              Explore the live product or review the implementation details in the repository.
+              {project.liveUrl
+                ? "Explore the live product or review the implementation details in the repository."
+                : "Review the implementation details in the repository."}
             </p>
           </FadeIn>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -396,9 +400,11 @@ export function ProjectCaseStudy({ project }: Props) {
               All Projects
             </Link>
             <div className="flex gap-3">
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-olive text-surface text-sm font-semibold hover:-translate-y-0.5 hover:shadow-medium transition-all duration-200">
-                Live Demo <ArrowUpRight size={13} strokeWidth={2.5} />
-              </a>
+              {project.liveUrl ? (
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-olive text-surface text-sm font-semibold hover:-translate-y-0.5 hover:shadow-medium transition-all duration-200">
+                  Live Demo <ArrowUpRight size={13} strokeWidth={2.5} />
+                </a>
+              ) : null}
               <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-text/20 text-text/70 text-sm font-semibold hover:border-olive hover:text-olive hover:-translate-y-0.5 transition-all duration-200">
                 <GithubIcon size={13} /> View Code
               </a>
