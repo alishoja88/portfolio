@@ -16,19 +16,18 @@ export const NAV_LINKS = [
 
 export const ABOUT_BULLETS = [
   {
-    title: "React & Component Architecture",
+    title: "Production work at Venn Innovation",
     description:
-      "Scalable component systems with hooks, state management, and design patterns",
+      "Built Events, Programs, and Registration modules in active use today.",
   },
   {
-    title: "TypeScript & Type Safety",
-    description:
-      "Strong typing systems that prevent bugs and enable confident refactoring",
+    title: "Volunteer frontend at Civic Tech Moncton",
+    description: "Donation app used by a local food bank.",
   },
   {
-    title: "Design Systems & Craft",
+    title: "Personal projects",
     description:
-      "Attention to detail in typography, spacing, and micro-interactions that delight",
+      "91 passing tests across unit, integration, and E2E layers.",
   },
 ] as const;
 
@@ -36,13 +35,13 @@ export const PROJECTS = [
   {
     number: "01",
     slug: "receipttrack",
-    category: "Full Stack Product",
-    title: "ReceiptTrack",
-    subtitle: "AI-powered receipt and expense tracking",
+    category: "FULL-STACK PROJECT",
+    title: "ReceiptTracker",
+    subtitle: "Full-stack expense tracker \u2014 receipts in, structured data out.",
     highlight:
       "Upload receipts, extract data with OCR + AI, and organize expenses automatically.",
     description:
-      "Upload receipt images or PDFs, extract purchase data automatically with OCR and AI, and organize expenses in a searchable analytics dashboard.",
+      "Full-stack expense tracking: upload a receipt, Google Vision OCR extracts the text, OpenAI parses it into structured fields (merchant, date, amount, category), results stored in PostgreSQL and shown in a searchable dashboard. Containerized with Docker and deployed to Google Cloud Run with Cloud SQL.",
     role: "Full Stack Developer",
     features: [
       "Upload receipts (image / PDF)",
@@ -54,17 +53,19 @@ export const PROJECTS = [
     ],
     impact: [
       "OCR + AI extraction pipeline",
-      "Full-stack: React + NestJS",
+      "Full-stack: React + NestJS + Cloud Run",
     ],
     tags: [
       "React",
       "TypeScript",
+      "Zustand",
       "NestJS",
+      "TypeORM",
       "PostgreSQL",
-      "OCR",
-      "OpenAI",
-      "Google Cloud Run",
-      "Cloud SQL",
+      "OpenAI API",
+      "Google Cloud Vision API",
+      "Docker",
+      "GCP Cloud Run",
     ],
     liveUrl: "https://receipt-tracker-frontend-827118437630.us-central1.run.app/",
     githubUrl: "https://github.com/alishoja88",
@@ -79,9 +80,11 @@ export const PROJECTS = [
     ],
     caseStudy: {
       valueBullets: [
-        "Extract receipt data from images and PDFs",
-        "Transform raw OCR text into structured expense records",
-        "Explore spending through analytics, filters, and search",
+        "Full-stack architecture: React + TypeScript frontend, NestJS + TypeORM backend, PostgreSQL data store.",
+        "OCR pipeline using Google Cloud Vision API to extract raw text from receipt images and PDFs.",
+        "Structured parsing layer powered by OpenAI to convert noisy OCR output into normalized fields (merchant, date, amount, category).",
+        "Containerized with Docker and deployed to Google Cloud Run with Cloud SQL and Artifact Registry.",
+        "Searchable dashboard with filters, analytics charts, and category breakdowns.",
       ],
       overview: {
         what: "ReceiptTrack lets users upload receipt images or PDFs and automatically extracts key purchase information — merchant, date, amount, and category. The structured data is stored and displayed in a searchable analytics dashboard.",
@@ -217,14 +220,14 @@ export const PROJECTS = [
   {
     number: "03",
     slug: "atelier",
-    category: "E-COMMERCE PROJECT",
+    category: "E-COMMERCE FRONTEND",
     title: "Atelier Fashion Store",
     subtitle:
-      "A modern, premium fashion e-commerce experience built for performance, design quality, real-world API integration, and production-level testing.",
+      "Frontend e-commerce platform built with Next.js App Router, TypeScript, and the modern React ecosystem. Real API integration, full test coverage, and adapter-driven architecture.",
     highlight:
       "Premium e-commerce experience with cinematic motion, real API data, and comprehensive automated tests.",
     description:
-      "A premium fashion e-commerce platform built with Next.js 16, featuring cinematic animations, real API integration, and 91 passing tests across unit, integration, and E2E suites.",
+      "E-commerce frontend on Next.js App Router with DummyJSON API (194 products). Catalog with filtering, search, sort, pagination; cart and wishlist with a fly-to-cart animation via React portals. Built an adapter layer between API and UI so all components consume a single normalized product shape.",
     role: "Front-End Developer",
     features: [
       "Cinematic landing page with fullscreen hero and scroll-triggered animations",
@@ -236,24 +239,19 @@ export const PROJECTS = [
       "Fully responsive across all screen sizes",
     ],
     impact: [
-      "194 real products from DummyJSON API",
-      "6 pages: Landing, Shop, Detail, Cart, Wishlist, Checkout",
-      "91 passing tests",
-      "2 tested browsers: Chrome + Mobile Safari",
-      "0 failed tests",
+      "Adapter pattern between API and UI",
+      "91 tests (Vitest + RTL + Playwright)",
     ],
     tags: [
-      "Next.js 16",
-      "React 19",
+      "Next.js",
+      "React",
       "TypeScript",
-      "Tailwind CSS v4",
-      "Framer Motion v12",
-      "TanStack Query v5",
-      "Zustand v5",
-      "Axios",
-      "DummyJSON API",
-      "Vitest",
+      "Tailwind CSS",
+      "TanStack Query",
+      "Zustand",
+      "Framer Motion",
       "Playwright",
+      "Vitest",
     ],
     liveUrl: "https://atelier-ecommerce-psi.vercel.app",
     githubUrl: "https://github.com/alishoja88/atelier-ecommerce",
@@ -267,18 +265,18 @@ export const PROJECTS = [
     ],
     caseStudy: {
       heroDescription:
-        "Atelier is a full-featured fashion e-commerce platform designed as a senior front-end portfolio piece. It demonstrates production-level code architecture, modern UI patterns, seamless API integration, and comprehensive test coverage — built entirely with Next.js 16 and the latest React ecosystem.",
+        "Atelier is a fashion e-commerce frontend I built end-to-end to practice production-level patterns: an adapter layer between API and UI, server/client component boundaries in Next.js App Router, global cart state with portal-based fly-to-cart animations, and a three-layer testing strategy. The store consumes real product data from DummyJSON (194 products) and is fully responsive.",
       valueBullets: [
-        "Cinematic landing page with fullscreen hero and scroll-triggered animations",
-        "Product listing with real-time filtering, search, and category navigation across 194 real products",
-        "Product detail page with animated image gallery, size/color selection, real ratings, and customer reviews",
-        "Cart management with fly-to-cart animation and Zustand global state",
-        "Quick View modal for instant product preview",
-        "91 passing tests: unit, integration, and E2E",
-        "Fully responsive across all screen sizes",
+        "Built on Next.js App Router with React Server Components and Client Components split deliberately.",
+        "Product catalog with category filtering, keyword search, sort by price/rating, and numbered pagination across 194 products.",
+        "Product detail page with image gallery, size/color selectors, real product ratings, and reviews.",
+        "Cart and wishlist managed with Zustand, including a fly-to-cart animation via React portals and getBoundingClientRect.",
+        "Quick View modal for inline product preview without navigation.",
+        "91 passing tests across unit (Vitest), integration (Testing Library), and E2E (Playwright).",
+        "Fully responsive \u2014 mobile-first layout tested in Playwright on Mobile Safari.",
       ],
       overview: {
-        what: "Atelier simulates a real-world premium fashion store. Users can browse 194 real products from the DummyJSON API, filter by category, search by keyword, view detailed product pages with image galleries, add items to cart, and manage their wishlist — all with smooth animations and a polished editorial design aesthetic.",
+        what: "Atelier consumes 194 real products from the DummyJSON API. Users can browse by category, search by keyword, sort by price or rating, view detailed product pages with image galleries and reviews, manage a persistent cart with quantity controls, and toggle items in their wishlist. Every flow is covered by unit, integration, and E2E tests.",
         howSteps: [
           "DummyJSON API provides 194 real products with images, ratings, reviews, and categories",
           "TanStack Query handles all data fetching, caching, and pagination automatically",
@@ -365,7 +363,7 @@ export const PROJECTS = [
         "State Management": ["Zustand v5", "TanStack Query v5"],
         "API & Data": ["Axios", "DummyJSON API (194 products)"],
         Testing: ["Vitest", "Testing Library", "Playwright"],
-        Tooling: ["ESLint", "Prettier", "Cursor AI"],
+        Tooling: ["ESLint", "Prettier"],
       },
       techDescriptions: {
         Frontend:
@@ -376,7 +374,7 @@ export const PROJECTS = [
           "Real product data with adapter-driven transformation and type-safe usage in the UI.",
         Testing:
           "Three-layer strategy covering logic, component behavior, and browser-level user flows.",
-        Tooling: "Linting, formatting, and AI-assisted development workflow for consistent delivery.",
+        Tooling: "Linting and formatting for consistent code style across the codebase.",
       } as Record<string, string>,
       challenges: [
         {
@@ -397,7 +395,7 @@ export const PROJECTS = [
       ],
       highlights: [
         "194 real products from DummyJSON API with automatic caching and background refetching",
-        "Editorial design inspired by Nike, SSENSE, and Net-a-Porter — not a generic template",
+        "Visual design inspired by editorial fashion sites (Nike, SSENSE, Net-a-Porter).",
         "Fly-to-cart animation using React portals, Framer Motion, and real DOM position tracking",
         "91 tests covering unit logic, component behavior, and full E2E flows across 2 browsers",
         "Clean architecture: feature-based folders, adapter pattern, strict TypeScript, no any types",
@@ -408,13 +406,13 @@ export const PROJECTS = [
   {
     number: "04",
     slug: "devprep-ai",
-    category: "AI PRODUCT",
+    category: "AI PROJECT",
     title: "DevPrep AI",
     subtitle: "AI-powered frontend interview coach",
     highlight:
       "Practice technical interviews with personalized AI questions, instant scoring, and actionable feedback.",
     description:
-      "Practice technical interviews with a personalized AI coach. Get real questions tailored to your role and level, submit answers, and receive detailed feedback with scores, strengths, and model answers — instantly.",
+      "Interview practice app on Next.js App Router. Users configure a session (role, level, topics), receive AI-generated questions via OpenAI GPT-4o server-side, submit answers, and get a score with strengths, improvements, and a model answer. History persisted in localStorage; visualizations via Recharts.",
     role: "Front-End Developer",
     features: [
       "Generate interview questions by role, level, and tech stack",
@@ -427,12 +425,14 @@ export const PROJECTS = [
       "Session history with local persistence",
     ],
     tags: [
-      "React",
       "Next.js",
+      "React",
       "TypeScript",
-      "OpenAI",
-      "Zustand",
       "Tailwind CSS",
+      "Zustand",
+      "Framer Motion",
+      "Recharts",
+      "OpenAI GPT-4o",
     ],
     liveUrl: "https://developer-prepare-kttnhfelx-ali-shojas-projects.vercel.app/",
     githubUrl: "https://github.com/alishoja88",
@@ -548,22 +548,22 @@ export const PROJECTS = [
 
 export const SKILLS = [
   {
-    label: "Primary Stack",
-    title: "React",
+    label: "Frontend",
+    title: "React + Next.js",
     description:
-      "Component architecture, hooks, context & state management, performance optimization",
+      "React, Next.js App Router, Tailwind CSS, Framer Motion, React Hook Form, Zod.",
   },
   {
-    label: "Type Safety",
+    label: "State & Data",
     title: "TypeScript",
     description:
-      "Strict typing, interfaces, generics, and scalable codebases that grow with confidence",
+      "Strict TypeScript, Zustand for client state, TanStack Query for server state.",
   },
   {
-    label: "Design Philosophy",
-    title: "Systems",
+    label: "Testing & Tooling",
+    title: "Tested in Production",
     description:
-      "Design tokens, reusable components, consistent patterns that scale beautifully",
+      "Vitest, Jest, React Testing Library, Playwright. Docker, Vercel, Google Cloud Run.",
   },
 ] as const;
 
@@ -602,13 +602,13 @@ export const CONTACT_DETAILS = [
   },
   {
     label: "Location",
-    title: "Moncton, Canada",
-    description: "Remote \u2022 Timezone Flexible",
+    title: "Canada",
+    description: "Open to in-office, hybrid, or remote",
   },
   {
     label: "Availability",
     title: "Open Now",
-    description: "Ready for new projects",
+    description: "Available for new roles",
   },
 ] as const;
 

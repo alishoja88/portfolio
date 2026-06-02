@@ -8,6 +8,12 @@ import { PROJECTS } from "@/lib/constants";
 
 type Project = (typeof PROJECTS)[number];
 
+const FEATURED_SLUGS = ["atelier", "receipttrack"] as const;
+
+const FEATURED_PROJECTS = FEATURED_SLUGS
+  .map((slug) => PROJECTS.find((p) => p.slug === slug))
+  .filter((p): p is Project => Boolean(p));
+
 /* ── Project icon (abstract shape per project type) ── */
 function ProjectIcon({ type }: { type: Project["previewType"] }) {
   if (type === "interface") {
@@ -74,7 +80,7 @@ function ProjectCard({ project }: { project: Project }) {
             {project.title}
           </h3>
           <span className="shrink-0 px-2 py-0.5 rounded-full bg-olive/12 border border-olive/20 text-[0.55rem] font-bold uppercase tracking-widest text-olive">
-            {project.number === "01" ? "Featured" : project.category.split(" ")[0]}
+            Featured
           </span>
         </div>
 
@@ -106,7 +112,7 @@ function ProjectCard({ project }: { project: Project }) {
             ))}
           </div>
           <Link
-            href="/projects"
+            href={`/projects/${project.slug}`}
             className="text-[0.72rem] font-bold text-olive hover:underline underline-offset-4 transition-all duration-200"
           >
             Details →
@@ -137,7 +143,7 @@ export function ProjectsSection() {
 
         {/* Card grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {PROJECTS.slice(0, 2).map((project, i) => (
+          {FEATURED_PROJECTS.map((project, i) => (
             <FadeIn key={project.title} delay={0.1 + i * 0.08}>
               <ProjectCard project={project} />
             </FadeIn>

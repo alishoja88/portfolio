@@ -5,56 +5,59 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 const EXPERIENCES = [
   {
-    role: "Full-Stack Developer",
+    role: "Full-Stack Developer (Contract)",
     company: "Venn Innovation",
     location: "Moncton, Canada",
     period: "June 2025 — Oct 2025",
-    current: true,
+    badge: "Contract",
     description: [
-      "Developed scalable frontend and backend features",
-      "Built reusable UI components using React and TypeScript",
-      "Collaborated with cross-functional teams",
-      "Contributed to API design and architecture",
+      "Built a production management platform for an Early Childhood Family Resource Centre (team of 8), replacing a paper-based workflow.",
+      "Owned the Events, Programs, and Registration modules end-to-end across frontend and backend.",
+      "Built the recurring events system using rrule with \u201cdelete this\u201d vs \u201cdelete future\u201d semantics.",
+      "Defined the backoffice frontend architecture, adopted by other developers as the standard for new modules.",
     ],
+    stack: ["React", "TypeScript", "NestJS", "PostgreSQL", "TanStack Query"],
   },
   {
-    role: "Frontend Developer",
+    role: "Frontend Developer (Volunteer)",
     company: "Civic Tech Moncton",
     location: "Moncton, Canada",
-    period: "Feb 2025 — Oct 2025",
-    current: false,
+    period: "Feb 2025 — Nov 2025",
+    badge: "Volunteer",
     description: [
-      "Built responsive UI for community platforms",
-      "Improved usability and accessibility",
-      "Worked in agile team environment",
-      "Delivered user-focused frontend features",
+      "Built the Incoming and Outgoing modules end-to-end on the frontend (team of 4) for a donation management app used by a local food bank.",
+      "Implemented a barcode scanner for product intake using react-qr-barcode-scanner.",
+      "Integrated REST APIs from the backend team and contributed to Figma design.",
+      "Application is in active use by the food bank today.",
     ],
+    stack: ["React", "TypeScript", "Tailwind CSS", "Figma"],
   },
   {
-    role: "Frontend Developer",
-    company: "Dotin",
-    location: "Tehran, Iran",
-    period: "2021 — 2023",
-    current: false,
+    role: "Career Transition \u2014 Frontend Development",
+    company: "Self-Directed",
+    location: "Canada",
+    period: "Jul 2022 — Jan 2025",
+    badge: "Career Transition",
     description: [
-      "Developed banking UI systems",
-      "Built multi-step loan application flow",
-      "Improved performance and UI consistency",
-      "Integrated REST APIs with frontend",
+      "Transitioned from technical support into frontend development through structured self-study of React, TypeScript, and Next.js.",
+      "Built portfolio projects with cloud deployment and test coverage.",
+      "Supported the transition with non-technical part-time work.",
     ],
+    stack: ["React", "TypeScript", "Next.js"],
   },
   {
-    role: "Technical Support Specialist",
-    company: "Dotin",
+    role: "Technical Support Specialist (Tier 3)",
+    company: "Dotin (Core Banking Software)",
     location: "Tehran, Iran",
-    period: "2019 — 2021",
-    current: false,
+    period: "Nov 2019 — Jun 2022",
+    badge: "Full-time",
     description: [
-      "Resolved system-level issues",
-      "Debugged frontend and backend problems",
-      "Improved response workflows",
-      "Supported large-scale banking systems",
+      "Tier 3 production support for a web-based core banking platform used by 5 major banks.",
+      "Directly responsible for the cheque subsystem \u2014 owned all tier 3 tickets and bank-facing escalations.",
+      "Diagnosed bugs via server logs, in-browser reproduction, and source code reading; wrote SQL queries to investigate data.",
+      "Trained two new team members; handled 250\u2013300 tickets per month.",
     ],
+    stack: ["SQL", "JavaScript", "Debugging", "Jira"],
   },
 ];
 
@@ -68,7 +71,6 @@ interface EntryProps {
 
 function TimelineEntry({ exp, index, activeIndex }: EntryProps) {
   const isActive = index <= activeIndex;
-  const isCurrent = index === 0;
 
   return (
     <motion.div
@@ -106,10 +108,9 @@ function TimelineEntry({ exp, index, activeIndex }: EntryProps) {
           <p className="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-text/55">
             {exp.period}
           </p>
-          {isCurrent && (
+          {exp.badge && (
             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-olive/12 border border-olive/25 text-[0.6rem] font-bold text-olive">
-              <span className="w-1 h-1 rounded-full bg-olive animate-pulse" />
-              Current
+              {exp.badge}
             </span>
           )}
         </div>
@@ -135,6 +136,20 @@ function TimelineEntry({ exp, index, activeIndex }: EntryProps) {
             </li>
           ))}
         </ul>
+
+        {/* Stack badges */}
+        {exp.stack && exp.stack.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mt-5">
+            {exp.stack.map((tech) => (
+              <span
+                key={tech}
+                className="px-2.5 py-0.5 rounded-full bg-olive/8 border border-olive/18 text-[0.7rem] font-bold text-olive tracking-wide"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </motion.div>
   );

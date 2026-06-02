@@ -72,17 +72,6 @@ function GitIcon() {
   );
 }
 
-function GitHubIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-      <path
-        fill="#1b1f23"
-        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-      />
-    </svg>
-  );
-}
-
 function DockerIcon() {
   return (
     <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
@@ -90,28 +79,6 @@ function DockerIcon() {
         fill="#2496ED"
         d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.185.186v1.887c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 0 0-.75.748 11.376 11.376 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 0 0 3.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"
       />
-    </svg>
-  );
-}
-
-function ClaudeIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-      <rect width="24" height="24" rx="5" fill="#D97757" />
-      <path
-        fill="#fff"
-        d="M14.64 6.8 12 13.6 9.36 6.8H7.2L11.04 17.2h1.92L16.8 6.8h-2.16z"
-      />
-    </svg>
-  );
-}
-
-function CursorIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
-      <rect width="24" height="24" rx="5" fill="#1a1a1a" />
-      <path d="M7 17L12 7l5 10" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M9 13h6" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   );
 }
@@ -126,17 +93,6 @@ function PostgresIcon() {
       <path
         fill="#fff"
         d="M12 6.4c2.21 0 4 1.343 4 3s-1.79 3-4 3-4-1.343-4-3 1.79-3 4-3zm0 1.2c-1.546 0-2.8.81-2.8 1.8S10.454 11.2 12 11.2s2.8-.81 2.8-1.8S13.546 7.6 12 7.6z"
-      />
-    </svg>
-  );
-}
-
-function MongoIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-      <path
-        fill="#47A248"
-        d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.3 6.338 4.633 9.537 5.054 9.809l.096.063a.912.912 0 0 0 .145-.324c.503-1.307 2.276-5.197 5.276-11.197zm-2.67 10.56c-.03.166-.065.308-.09.41a.913.913 0 0 1-.032.128l.065.045c1.078.714 1.79.942 2.156 1.032.13.03.256.054.394.064-.08-.176-.176-.464-.305-.927-.327-1.178-.553-2.47-.61-3.688a14.487 14.487 0 0 1-.016-.524 20.21 20.21 0 0 1-1.563 3.46z"
       />
     </svg>
   );
@@ -165,17 +121,6 @@ function ComponentsIcon() {
   );
 }
 
-function UISystemsIcon() {
-  return (
-    <svg viewBox="0 0 16 16" width="16" height="16" fill="none" aria-hidden="true">
-      <rect x="1" y="1" width="14" height="3.5" rx="1.5" stroke="#6b7d5f" strokeWidth="1.4" />
-      <rect x="1" y="6.5" width="6" height="3.5" rx="1.5" stroke="#6b7d5f" strokeWidth="1.4" />
-      <rect x="9" y="6.5" width="6" height="3.5" rx="1.5" stroke="#6b7d5f" strokeWidth="1.4" />
-      <rect x="1" y="12" width="14" height="3" rx="1.5" stroke="#6b7d5f" strokeWidth="1.4" />
-    </svg>
-  );
-}
-
 function APIIcon() {
   return (
     <svg viewBox="0 0 16 16" width="16" height="16" fill="none" aria-hidden="true">
@@ -187,23 +132,12 @@ function APIIcon() {
   );
 }
 
-function PerformanceIcon() {
-  return (
-    <svg viewBox="0 0 16 16" width="16" height="16" fill="none" aria-hidden="true">
-      <path d="M2 12 C2 7.58 5.58 4 10 4" stroke="#6b7d5f" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M10 4 C12.21 4 14 5.79 14 8 C14 10.21 12.21 12 10 12 C9.1 12 8.27 11.72 7.6 11.24" stroke="#6b7d5f" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M10 8 L7 5" stroke="#6b7d5f" strokeWidth="1.4" strokeLinecap="round" />
-      <circle cx="10" cy="8" r="1" fill="#6b7d5f" />
-    </svg>
-  );
-}
-
 /* ─── Skill groups data ─── */
 
 const SKILL_GROUPS = [
   {
     category: "Core Stack",
-    description: "Primary languages and frameworks I build with every day",
+    description: "Primary languages and frameworks I build with",
     skills: [
       { name: "React", icon: <ReactIcon /> },
       { name: "TypeScript", icon: <TypeScriptIcon /> },
@@ -212,40 +146,47 @@ const SKILL_GROUPS = [
     ],
   },
   {
-    category: "UI & Systems",
+    category: "UI & Styling",
     description: "Design systems, styling, and component architecture",
     skills: [
       { name: "Tailwind CSS", icon: <TailwindIcon /> },
-      { name: "UI Systems", icon: <UISystemsIcon /> },
-      { name: "Components", icon: <ComponentsIcon /> },
+      { name: "Framer Motion", icon: <ComponentsIcon /> },
+      { name: "React Hook Form", icon: <ComponentsIcon /> },
     ],
   },
   {
-    category: "Tooling & DevOps",
-    description: "Version control, containerization, and collaboration",
+    category: "State & Data",
+    description: "Client and server state management",
     skills: [
-      { name: "Git", icon: <GitIcon /> },
-      { name: "GitHub", icon: <GitHubIcon /> },
-      { name: "Docker", icon: <DockerIcon /> },
+      { name: "Zustand", icon: <ComponentsIcon /> },
+      { name: "TanStack Query", icon: <ComponentsIcon /> },
+      { name: "REST APIs", icon: <APIIcon /> },
+      { name: "Axios", icon: <ComponentsIcon /> },
     ],
   },
   {
-    category: "Databases",
-    description: "Relational and document-based data storage",
+    category: "Backend",
+    description: "APIs, databases, and server-side work",
     skills: [
-      { name: "SQL", icon: <SQLIcon /> },
+      { name: "NestJS", icon: <ComponentsIcon /> },
+      { name: "Node.js", icon: <ComponentsIcon /> },
       { name: "PostgreSQL", icon: <PostgresIcon /> },
-      { name: "MongoDB", icon: <MongoIcon /> },
+      { name: "TypeORM", icon: <ComponentsIcon /> },
+      { name: "SQL", icon: <SQLIcon /> },
     ],
   },
   {
-    category: "AI & Productivity",
-    description: "AI-powered tools that accelerate development",
+    category: "Testing & Tooling",
+    description: "Quality, deployment, and collaboration",
     skills: [
-      { name: "Claude AI", icon: <ClaudeIcon /> },
-      { name: "Cursor AI", icon: <CursorIcon /> },
-      { name: "API Integration", icon: <APIIcon /> },
-      { name: "Performance", icon: <PerformanceIcon /> },
+      { name: "Vitest", icon: <ComponentsIcon /> },
+      { name: "Jest", icon: <ComponentsIcon /> },
+      { name: "Playwright", icon: <ComponentsIcon /> },
+      { name: "Git", icon: <GitIcon /> },
+      { name: "Docker", icon: <DockerIcon /> },
+      { name: "Vercel", icon: <ComponentsIcon /> },
+      { name: "Google Cloud Run", icon: <ComponentsIcon /> },
+      { name: "Figma", icon: <ComponentsIcon /> },
     ],
   },
 ];

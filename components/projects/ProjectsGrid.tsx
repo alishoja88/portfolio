@@ -11,6 +11,12 @@ type Project = (typeof PROJECTS)[number];
 
 const hasDetailPage = (p: Project) => "caseStudy" in p;
 
+const DISPLAY_ORDER = ["atelier", "receipttrack", "devprep-ai"] as const;
+
+const VISIBLE_PROJECTS = DISPLAY_ORDER
+  .map((slug) => PROJECTS.find((p) => p.slug === slug))
+  .filter((p): p is Project => Boolean(p));
+
 /* ─────────────────── Shared mockup previews ─────────────────── */
 
 function CardPreview({ type }: { type: Project["previewType"] }) {
@@ -130,10 +136,6 @@ function CardPreview({ type }: { type: Project["previewType"] }) {
 
 function ProjectCard({ project, isFeatured = false }: { project: Project; isFeatured?: boolean }) {
   const isPage = hasDetailPage(project);
-  const visibleTags =
-    project.slug === "receipttrack" || project.slug === "devprep-ai"
-      ? project.tags.slice(0, 8)
-      : project.tags.slice(0, 5);
 
   return (
     <FadeIn>
@@ -186,7 +188,7 @@ function ProjectCard({ project, isFeatured = false }: { project: Project; isFeat
 
           {/* Tags */}
           <div className="flex flex-wrap gap-1.5 mb-5">
-            {visibleTags.map((tag) => (
+            {project.tags.map((tag) => (
               <span
                 key={tag}
                 className="px-2.5 py-0.5 rounded-full bg-olive/8 border border-olive/18 text-[0.65rem] font-bold text-olive tracking-wide"
@@ -233,7 +235,7 @@ export function ProjectsGrid() {
     <section className="bg-olive-light/35 pb-16 lg:pb-24">
       <div className="container-base pt-10 pb-4 lg:pt-14">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {PROJECTS.map((project, i) => (
+          {VISIBLE_PROJECTS.map((project, i) => (
             <ProjectCard key={project.slug} project={project} isFeatured={i === 0} />
           ))}
         </div>

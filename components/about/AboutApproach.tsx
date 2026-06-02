@@ -5,21 +5,21 @@ import { FadeIn } from "@/components/ui/FadeIn";
 const PRINCIPLES = [
   {
     number: "01",
-    title: "Clean Architecture",
+    title: "Clear architecture",
     description:
-      "Code that future teammates can read, extend, and trust. Maintainability is a feature.",
+      "Explicit data flow, predictable patterns, separation between server and client state. The architecture I defined at Venn was adopted by other developers as the standard for new modules.",
   },
   {
     number: "02",
-    title: "Scalable UI",
+    title: "Tested where it counts",
     description:
-      "Components built to grow with the product — not rebuilt every quarter.",
+      "Unit tests for logic, integration tests for behavior, E2E tests for critical flows. My Atelier project has 91 passing tests across all three layers (Vitest, RTL, Playwright).",
   },
   {
     number: "03",
-    title: "User-Focused Design",
+    title: "Read before write",
     description:
-      "Every decision traced back to the person clicking the button, not the developer writing it.",
+      "Years of reading production code to debug it taught me that good frontend isn\u2019t about being clever \u2014 it\u2019s about being clear.",
   },
 ];
 
@@ -39,23 +39,27 @@ export function AboutApproach() {
 
             <FadeIn delay={0.07}>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-[1.1] mb-5 sm:mb-7">
-                Clean, scalable, and human-centered frontend.
+                How I work
               </h2>
             </FadeIn>
 
             <FadeIn delay={0.12}>
               <p className="text-[0.9375rem] text-text/65 leading-[1.85]">
-                I believe frontend development is about more than writing code that works —
-                it&apos;s about writing code that lasts. That means building UI systems that
-                scale with your product, components that are intuitive for other developers
-                to use, and interfaces that respect the user&apos;s time and attention.
+                I write frontend code that&apos;s honest about what it does. That
+                means clear naming, explicit data flow between server and client,
+                and tests where they pay back. Most of my recent production work
+                uses Next.js App Router with TypeScript &mdash; I&apos;m comfortable
+                with the boundaries between server components, client components,
+                and server actions.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.16}>
               <p className="text-[0.9375rem] text-text/65 leading-[1.85] mt-4">
-                I focus on clean architecture, performance optimization, and creating
-                reusable patterns that let teams move faster without sacrificing quality.
+                My background in Tier 3 support shapes how I think about software.
+                I&apos;ve spent years reading code that other people wrote, often
+                in a hurry, to debug it under pressure. So when I build something,
+                I try to write the kind of code I&apos;d want to inherit.
               </p>
             </FadeIn>
           </div>

@@ -18,19 +18,27 @@ export function AboutSection() {
 
             <FadeIn delay={0.1}>
               <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight leading-[1.1] mb-6">
-                Building thoughtful
+                From support engineer
                 <br />
-                interfaces.
+                to building software.
               </h2>
             </FadeIn>
 
             <FadeIn delay={0.15}>
               <p className="text-[0.9375rem] text-text-muted leading-relaxed mb-10 max-w-lg">
-                I work at the intersection of product thinking and interface
-                craft — building React and TypeScript systems that are scalable,
-                performant, and genuinely pleasant to use. From component
-                architecture to polished interactions, I care about code clarity
-                and user experience equally.
+                I spent 2.5 years as Tier 3 production support at a core
+                banking platform serving 5 major banks. Reading source code
+                daily to diagnose bugs is what made me want to build software,
+                not just support it.
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.18}>
+              <p className="text-[0.9375rem] text-text-muted leading-relaxed mb-10 max-w-lg">
+                Today I work primarily with React, TypeScript, and Next.js
+                {" \u2014 "}building frontend systems with clear architecture,
+                real test coverage, and the kind of code I&apos;d want to
+                inherit.
               </p>
             </FadeIn>
 

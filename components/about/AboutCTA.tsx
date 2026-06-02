@@ -15,12 +15,13 @@ export function AboutCTA() {
             </p>
 
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-medium tracking-tight leading-[1.1] mb-3">
-              Interested in working together?
+              Let&apos;s build something useful
             </h2>
 
             <p className="text-sm sm:text-[0.9375rem] text-text/60 leading-relaxed max-w-sm mx-auto mb-7 sm:mb-8">
-              Let&apos;s create something great. I&apos;m available for freelance work
-              and full-time opportunities.
+              Open to frontend and full-stack roles where I can ship real
+              product work and learn from a strong team. Happy to chat about
+              your team or what you&apos;re building.
             </p>
 
             <div className="flex flex-col xs:flex-row flex-wrap items-center justify-center gap-3">

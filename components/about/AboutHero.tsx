@@ -9,8 +9,8 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 const HIGHLIGHTS = [
   { label: "React & TypeScript" },
-  { label: "3+ Years Experience" },
-  { label: "Moncton, Canada" },
+  { label: "Next.js App Router" },
+  { label: "Based in Canada" },
 ];
 
 export function AboutHero() {
@@ -41,9 +41,9 @@ export function AboutHero() {
 
             <FadeIn delay={0.16}>
               <p className="text-sm sm:text-[0.9375rem] text-text/65 leading-[1.8] mb-7 sm:mb-8 max-w-[420px] mx-auto">
-                Passionate about building clean, performant, and user-focused
-                interfaces. I combine technical precision with thoughtful design
-                to create scalable frontend systems that people actually enjoy using.
+                Frontend developer building production React and TypeScript
+                applications. Transitioning into product work from a 2.5-year
+                background in Tier 3 technical support at a core banking platform.
               </p>
             </FadeIn>
 

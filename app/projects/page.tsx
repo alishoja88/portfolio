@@ -7,7 +7,7 @@ import { SectionDivider } from "@/components/layout/SectionDivider";
 export const metadata: Metadata = {
   title: "Projects — Ali Shoja",
   description:
-    "A visual collection of work showcasing thoughtful design, scalable frontends, and measurable impact.",
+    "Three projects built end-to-end while transitioning into frontend development. Each one shipped, tested, and deployed to a real cloud platform.",
 };
 
 export default function ProjectsPage() {

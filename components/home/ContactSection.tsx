@@ -27,7 +27,7 @@ export function ContactSection() {
 
             <FadeIn delay={0.15}>
               <p className="text-[0.9375rem] text-text-muted leading-relaxed mb-8 max-w-lg">
-                {"I\u2019m interested in freelance projects and full-time opportunities where I can contribute to thoughtful product interfaces and scalable systems."}
+                {"Open to frontend and full-stack roles where I can build something useful and learn from a strong team. Happy to chat about your team or what you\u2019re building."}
               </p>
             </FadeIn>
 

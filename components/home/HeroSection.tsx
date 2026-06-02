@@ -146,8 +146,9 @@ export function HeroSection() {
           </motion.p>
 
           <motion.p variants={fadeUp} className="text-base text-text-muted leading-relaxed max-w-md mb-10">
-            I build thoughtful React and TypeScript interfaces with a focus on
-            real products, clean systems, and refined user experiences.
+            Frontend developer building production React and TypeScript
+            applications. Recent work includes a full-stack platform at Venn
+            Innovation and a Civic Tech donation app used by a local food bank.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-wrap gap-3">

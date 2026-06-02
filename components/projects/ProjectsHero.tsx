@@ -1,15 +1,22 @@
 "use client";
 
 import { FadeIn } from "@/components/ui/FadeIn";
-import { PROJECTS } from "@/lib/constants";
 
 const STATS = [
-  { value: `${PROJECTS.length}`, label: "Projects" },
-  { value: "3+", label: "Years Experience" },
-  { value: "100%", label: "TypeScript" },
+  { value: "3", label: "Projects" },
+  { value: "91", label: "Passing Tests" },
+  { value: "TS", label: "TypeScript First" },
 ];
 
-const ALL_TAGS = [...new Set(PROJECTS.flatMap((p) => [...p.tags]))].slice(0, 6);
+const ALL_TAGS = [
+  "React",
+  "TypeScript",
+  "Next.js",
+  "NestJS",
+  "PostgreSQL",
+  "Tailwind CSS",
+  "Docker",
+];
 
 export function ProjectsHero() {
   return (
@@ -34,8 +41,9 @@ export function ProjectsHero() {
 
             <FadeIn delay={0.15}>
               <p className="text-base md:text-lg text-text-muted leading-relaxed max-w-md">
-                A visual collection of work showcasing thoughtful design, scalable
-                frontends, and measurable impact.
+                Three projects I built end-to-end while transitioning into frontend
+                development. Each one shipped, tested, and deployed to a real cloud
+                platform.
               </p>
             </FadeIn>
           </div>
